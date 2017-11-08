@@ -11,7 +11,6 @@ const selectedItemDecorator = WrappedComponent => {
     }
 
     handleSelectItem(text) {
-      console.log(text)
       this.setState(
         this.setState({
           selectedItemText: text

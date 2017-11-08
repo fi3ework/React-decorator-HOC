@@ -27,8 +27,9 @@ class App extends Component {
   render() {
     return (
       <SearchSelect
-        onSearch={(e) => { console.log(e.target.value) }}
-        onClick={(text) => { console.log(text) }}
+        searchPlaceholder={'请搜索电影'}
+        onSearch={(e) => { console.log(`自定义onSearch: ${e.target.value}`) }}
+        onClick={(text) => { console.log(`自定义onClick: ${text}`) }}
         url="/v2/movie/in_theaters"
       />
     )

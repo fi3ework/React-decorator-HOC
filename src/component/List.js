@@ -1,10 +1,7 @@
-import React, { Component } from 'react'
-import { Button, Col, Row } from 'antd'
+import React, { Component, PureComponent } from 'react'
 
-class ListComponent extends Component {
-
+class ListComponent extends PureComponent {
   onClick = (e) => {
-    console.log(this.props.text)
     this.props.onClick(this.props.text)
   }
 
@@ -25,20 +22,11 @@ class ListComponent extends Component {
   }
 }
 
-
-
 export default class List extends Component {
   static displayName = 'List'
 
-  xx = (e) => {
-    console.log(e.target)
-  }
-
-
   render() {
-    const { isActive, data, onClickItem } = this.props
-    console.log(this.props)
-
+    const { data, onClickItem } = this.props
     return (
       <div>
         <p>List</p>
@@ -53,7 +41,7 @@ export default class List extends Component {
                 />
               )
             }) :
-            null
+            <div>无匹配数据...</div>
         }
       </div>
     )

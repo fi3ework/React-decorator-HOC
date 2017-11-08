@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 export default class Selector extends Component {
   render() {
-    console.log(this.state)
     return (
       <div>
         {
           this.props.children.map((item) => {
+            // SelectInput
             if (item.type.displayName === 'SelectInput') {
               return React.cloneElement(item,
                 {
@@ -15,18 +15,18 @@ export default class Selector extends Component {
                 }
               )
             }
-
+            // SearchInput
             if (item.type.displayName === 'SearchInput') {
               return React.cloneElement(item,
                 {
                   key: 'searchInput',
-                  onSearch: this.props.onSearch
+                  onSearch: this.props.onSearch,
+                  placeholder: this.props.searchPlaceholder
                 }
               )
             }
-
+            // List
             if (item.type.displayName === 'List') {
-              console.log(this.props.data)
               if (!(this.props.data && Object.keys(this.props.data).length)) {
                 return <div key="list">暂无数据</div>
               }
@@ -36,9 +36,6 @@ export default class Selector extends Component {
                 return keyword === '' || name.indexOf(keyword) >= 0
               })
 
-              if (filteredList.length === 0) {
-                return <div>无匹配数据...</div>
-              }
               return React.cloneElement(item,
                 {
                   key: 'list',

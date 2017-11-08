@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { Input, Icon } from 'antd'
+import React, { Component, PureComponent } from 'react'
+import { Input } from 'antd'
 
-export default class SelectInput extends Component {
+export default class SelectInput extends PureComponent {
   static displayName = 'SelectInput'
 
   render() {
-    const { text, isActive, onClickHeader, placeholder } = this.props
+    const { text, onClickHeader, placeholder } = this.props
     return (
       <div>
         <p>SelectInput</p>

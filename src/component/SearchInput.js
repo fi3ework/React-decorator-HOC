@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { Input, Icon } from 'antd'
+import React, { Component, PureComponent } from 'react'
+import { Input } from 'antd'
 
-export default class SearchInput extends Component {
+export default class SearchInput extends PureComponent {
   static displayName = 'SearchInput'
 
   render() {
-    const { isActive, onSearch, placeholder } = this.props
+    const { onSearch, placeholder } = this.props
     return (
       <div>
         <p>SearchSelect</p>
